@@ -13,5 +13,5 @@ interface PokemonService {
 
 
     //paginated pokemon
-    @GET("pokemon?limit=36")
+   // @GET("pokemon?limit=36")
 }
