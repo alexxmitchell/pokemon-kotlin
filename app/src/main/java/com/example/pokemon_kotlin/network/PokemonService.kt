@@ -7,9 +7,9 @@ import kotlin.random.Random
 
 
 interface PokemonService {
-    @GET("{randomIndex}")
+    @GET("pokemon/{randomIndex}")
     //adding random number automatically, but may want user to be able to send in
-    suspend fun getRandomPokemon(@Path("randomIndex") randomIndex: Int = Random.nextInt(300)): Pokemon
+    suspend fun getRandomPokemon(@Path("randomIndex") randomIndex: Int): Pokemon
 
 
     //paginated pokemon
