@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Pokemon-Kotlin</string>
+    <string name="poke_desc_formatted">Image of %s</string>
 </resources>

@@ -63,4 +63,8 @@ dependencies {
 
     def koin_version = "2.1.5"
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    //Coil
+    def coil_version = "0.11.0"
+    implementation "io.coil-kt:coil:${coil_version}"
 }

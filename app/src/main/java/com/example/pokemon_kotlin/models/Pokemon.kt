@@ -10,7 +10,8 @@ data class Pokemon (
     @Json(name = "id") val pokeId: Int,
     @Json(name = "abilities") val pokeAbilities: List<Abilities>,
     @Json(name = "forms") val pokeForms: List<Forms>,
-    @Json(name ="moves") val pokeMoves: List<Moves>
+    @Json(name = "moves") val pokeMoves: List<Moves>,
+    @Json(name = "sprites") var pokeImg: Sprites
 )
 
 @JsonClass(generateAdapter = true)
@@ -20,8 +21,8 @@ data class Abilities (
 
 @JsonClass(generateAdapter = true)
 data class Ability (
-    val name: String,
-    val url: String
+    @Json(name = "name") val name: String,
+    @Json(name = "url") val url: String
 )
 
 @JsonClass(generateAdapter = true)
@@ -40,3 +41,10 @@ data class Move (
     @Json(name = "name") val name: String,
     @Json(name = "url") val url: String
 )
+
+@JsonClass(generateAdapter = true)
+data class Sprites (
+    @Json(name = "front_default") val frontDefault: String,
+    @Json(name = "front_shiny") val frontShiny: String
+)
+
