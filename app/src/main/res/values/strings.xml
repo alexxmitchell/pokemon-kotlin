@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Pokemon-Kotlin</string>
     <string name="poke_desc_formatted">Image of %s</string>
+    <string name="choose_route">Choose your destiny</string>
+    <string name="view_random">Random</string>
+    <string name="view_list">List</string>
 </resources>
