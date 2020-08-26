@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/chooseRouteFragment">
+
+    <fragment
+        android:id="@+id/PokemonFragment"
+        android:name="com.example.pokemon_kotlin.ui.pokemon.PokemonFragment"
+        android:label="Pokemon Fragment"
+        tools:layout="@layout/fragment_pokemon">
+
+    </fragment>
+    <fragment
+        android:id="@+id/chooseRouteFragment"
+        android:name="com.example.pokemon_kotlin.ui.chooseRoute.ChooseRouteFragment"
+        android:label="ChooseRouteFragment" >
+        <action
+            android:id="@+id/action_chooseRouteFragment_to_PokemonFragment"
+            app:destination="@id/PokemonFragment" />
+    </fragment>
+
+</navigation>
