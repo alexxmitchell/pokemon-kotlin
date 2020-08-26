@@ -16,7 +16,7 @@ class PokemonViewModel(private val pokemonService: PokemonService): ViewModel() 
 
     fun getRandomPokemon(){
         viewModelScope.launch {
-            val randomPokemon = pokemonService.getRandomPokemon(1)
+            val randomPokemon = pokemonService.getRandomPokemon()
             pokemon.postValue(randomPokemon)
 
         }
