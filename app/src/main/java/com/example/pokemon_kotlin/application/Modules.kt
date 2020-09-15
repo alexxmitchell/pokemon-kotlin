@@ -1,6 +1,7 @@
 package com.example.pokemon_kotlin.application
 
 import com.example.pokemon_kotlin.network.PokemonService
+import com.example.pokemon_kotlin.ui.pokeList.PokeListViewModel
 import com.example.pokemon_kotlin.ui.pokemon.PokemonViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -18,6 +19,7 @@ val appModule = module {
     }
 
     viewModel { PokemonViewModel(pokemonService = get()) }
+    viewModel { PokeListViewModel(pokemonService = get()) }
 
 }
 

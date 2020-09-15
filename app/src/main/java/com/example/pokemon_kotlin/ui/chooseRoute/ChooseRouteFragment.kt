@@ -21,6 +21,9 @@ class ChooseRouteFragment: Fragment() {
         view_random_button.setOnClickListener {
             findNavController().navigate(R.id.action_chooseRouteFragment_to_PokemonFragment)
         }
+        view_list_button.setOnClickListener {
+            findNavController().navigate(R.id.action_chooseRouteFragment_to_pokemonListFragment)
+        }
 
     }
 }

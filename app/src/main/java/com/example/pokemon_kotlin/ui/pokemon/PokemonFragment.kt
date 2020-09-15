@@ -9,10 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.pokemon_kotlin.R
 import com.example.pokemon_kotlin.databinding.FragmentPokemonBinding
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class PokemonFragment: Fragment() {
+class PokemonFragment : Fragment() {
     val viewModel: PokemonViewModel by viewModel()
     private lateinit var binding: FragmentPokemonBinding
 
@@ -28,7 +27,7 @@ class PokemonFragment: Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         Log.i("binding", "hit onViewCreated")

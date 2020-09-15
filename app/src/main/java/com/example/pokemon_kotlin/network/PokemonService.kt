@@ -1,6 +1,7 @@
 package com.example.pokemon_kotlin.network
 
 import com.example.pokemon_kotlin.models.Pokemon
+import com.example.pokemon_kotlin.models.PokemonList
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -16,7 +17,10 @@ interface PokemonService {
     //paginated pokemon
     //defaults go at the end
     @GET("pokemon")
-    suspend fun getPokemonList(@Query("offset") offset: Int, @Query("limit") limit: Int = 36): List<Pokemon>
+    suspend fun getPokemonList(
+        @Query("offset") offset: Int,
+        @Query("limit") limit: Int = 36
+    ): PokemonList
 
 
 }
