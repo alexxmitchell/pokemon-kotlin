@@ -26,6 +26,10 @@
     <fragment
         android:id="@+id/pokemonListFragment"
         android:name="com.example.pokemon_kotlin.ui.pokeList.PokemonListFragment"
-        android:label="PokemonListFragment" />
+        android:label="PokemonListFragment" >
+        <action
+            android:id="@+id/action_pokemonListFragment_to_PokemonFragment"
+            app:destination="@id/PokemonFragment" />
+    </fragment>
 
 </navigation>

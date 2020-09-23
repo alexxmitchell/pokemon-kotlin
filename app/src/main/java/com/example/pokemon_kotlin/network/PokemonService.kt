@@ -22,5 +22,7 @@ interface PokemonService {
         @Query("limit") limit: Int = 36
     ): PokemonList
 
+    @GET("pokemon/{name}")
+    suspend fun getSpecificPokemon(@Path("name") name: String): Pokemon
 
 }

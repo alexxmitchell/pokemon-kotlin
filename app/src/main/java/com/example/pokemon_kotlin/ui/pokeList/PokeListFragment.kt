@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingComponent
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pokemon_kotlin.R
@@ -50,6 +48,14 @@ class PokemonListFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.getPokemonList()
+        //lambda function
+        pokeListAdapter.onItemClick = {
+            viewModel.getSpecificPokemon(it)
+            findNavController().navigate(R.id.action_pokemonListFragment_to_PokemonFragment)
+        }
+
+
+
     }
 
 

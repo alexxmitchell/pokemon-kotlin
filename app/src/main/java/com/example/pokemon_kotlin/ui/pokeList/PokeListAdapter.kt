@@ -10,11 +10,13 @@ import com.example.pokemon_kotlin.models.PokemonList
 import com.example.pokemon_kotlin.models.Result
 
 class PokeListAdapter : RecyclerView.Adapter<PokeListAdapter.PokeListViewHolder>() {
-    var list: List<String> = emptyList()
+    var list: List<Result> = emptyList()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
+    //lambda function variable
+    var onItemClick: ((String) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokeListViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -25,19 +27,23 @@ class PokeListAdapter : RecyclerView.Adapter<PokeListAdapter.PokeListViewHolder>
     override fun getItemCount(): Int = list.size
 
     override fun onBindViewHolder(holder: PokeListViewHolder, position: Int) {
-        holder.pokeName.text = list[position]
+        holder.pokeName.text = list[position].name
     }
 
     fun updatePokeList(list: List<Result>){
-        this.list = list.map { it.name }
+        this.list = list
     }
 
-    class PokeListViewHolder(binding: ListItemPokemonBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class PokeListViewHolder(binding: ListItemPokemonBinding) : RecyclerView.ViewHolder(binding.root){
         val pokeName : TextView = binding.pokemonListName
+        init {
+            pokeName.setOnClickListener{
+                //invoke makes it a function
+                onItemClick?.invoke(list[adapterPosition].name)}
+        }
 
-            //doing the same thing in onBindViewHolder
-//        fun bindPokeItems(str: String) {
-//            pokeName.text = str
-//        }
+
+
+
     }
 }

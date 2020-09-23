@@ -5,7 +5,7 @@
     <data>
         <variable
             name="pokemonViewModel"
-            type="com.example.pokemon_kotlin.ui.pokemon.PokemonViewModel" />
+            type="com.example.pokemon_kotlin.ui.pokeList.PokeListViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
